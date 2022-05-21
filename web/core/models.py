@@ -38,6 +38,9 @@ class ProductCategory(models.Model):
     description = models.TextField(null=False, blank=False,
                                    validators=(MinLengthValidator,))
 
+    def __str__(self):
+        return f'{self.name}'
+
 
 class Product(models.Model):
     NAME_MAX_LEN = 100
